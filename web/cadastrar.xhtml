@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Cadastrar</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:outputLabel value="Nome ">
+                <h:inputText value="#{contatoBean.contato.nome}"/>
+            </h:outputLabel> <br/>
+            <h:outputLabel value="Email ">
+                <h:inputText value="#{contatoBean.contato.email}"/>
+            </h:outputLabel> <br/>
+            <h:outputLabel value="Telefone ">
+                <h:inputText value="#{contatoBean.contato.telefone}"/>
+            </h:outputLabel> <br/>
+            <h:outputLabel value="Tipo de telefone " />
+            <h:selectOneRadio value="#{contatoBean.contato.tipoTelefone}">
+                <f:selectItem itemValue="celular" itemLabel="Celular" />
+            </h:selectOneRadio>
+            <h:outputLabel value="Tipo de contato " />
+            <h:selectOneMenu value="#{contatoBean.contato.tipoContato}">
+                <f:selectItem itemLabel="Escolha um item..." noSelectionOption="true"/>
+                <f:selectItem itemValue="amigo" itemLabel="Amigo"/>
+            </h:selectOneMenu> <br/>
+            <h:outputLabel value="Favorito" />
+            <h:selectOneRadio value="#{contatoBean.contato.favorito}">
+                <f:selectItem itemValue="true" itemLabel="Sim" />
+                <f:selectItem itemValue="false" itemLabel="Nao" />
+            </h:selectOneRadio>
+            
+            <h:commandButton value="Cadastrar" action="#{contatoBean.cadastrarContatoManage(contatoBean.contato)}"/><p/>
+            <h:commandButton value="Cancelar" immediate="true" action="/index.xhtml"/>
+        </h:form>
+    </h:body>
+</html>
+
