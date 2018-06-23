@@ -34,7 +34,7 @@ public class ContatoMB {
     
     public String cadastrarContatoManage(Contato c){
         listaContatosManage.add(contato);
-        return null;
+        return "/login";
     }
     
     public String listarContatoManage(){
@@ -49,8 +49,8 @@ public class ContatoMB {
         return null;
     }
 
-    public ContatoMB() {
-    }
+//    public ContatoMB() {
+//    }
 
     public ContatoDAO getpDAO() {
         return pDAO;
