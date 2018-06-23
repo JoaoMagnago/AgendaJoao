@@ -26,11 +26,12 @@ public class ContatoDAO {
     }    
     
     public void cadastrarContatoDAO(Contato contato){
-        
+        inserir(contato);
+        ContatoDAO.agendaBD.add(contato); //Acesso ao atributo estático
     }
     
     public List<Contato> listarContatoDAO(){
-        return listaContatos;
+        return ContatoDAO.agendaBD;
     }
     
     public void removerContatoDAO(Contato contato){

@@ -15,9 +15,13 @@ import modelo.Pessoa;
 class IDToolsBDUsuario {
     public static HashMap<String, Integer> pessoasCadastradas = new HashMap<>();
     public IDToolsBDUsuario(){
-        pessoasCadastradas.put("Isao", new Integer(123));
-        pessoasCadastradas.put("Joao", new Integer(111));
-        pessoasCadastradas.put("Mateus", new Integer(222));
+//        pessoasCadastradas.put("Isao", new Integer(123));
+//        pessoasCadastradas.put("Joao", new Integer(111));
+//        pessoasCadastradas.put("Mateus", new Integer(222));
+    }
+    
+    public void cadastrar(String login, Integer senha){
+        pessoasCadastradas.put(login, senha);
     }
     
     public Pessoa verificar(String nome, Integer senha){

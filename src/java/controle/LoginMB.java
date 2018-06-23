@@ -19,9 +19,10 @@ import modelo.Pessoa;
  */
 @ManagedBean(name="loginBean")
 @RequestScoped
-public class LoginManageBean {
+public class LoginMB {
     public String login;
     public Integer senha;
+    public Pessoa pessoa = new Pessoa();
 
     public String getLogin() {
         return login;
@@ -50,6 +51,11 @@ public class LoginManageBean {
 
     public void setSessaoUsuario(SessaoManageBean sessaoUsuario) {
         this.sessaoUsuario = sessaoUsuario;
+    }
+    
+    public String cadastrarPessoa(Pessoa p){
+        
+        return "login.xhtml";
     }
     
     public String logar(){

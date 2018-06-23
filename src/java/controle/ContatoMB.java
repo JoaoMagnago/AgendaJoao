@@ -20,22 +20,21 @@ import modelo.Contato;
 @ManagedBean(name = "contatoBean")
 @RequestScoped
 public class ContatoMB {
-    private ContatoDAO pDAO = new ContatoDAO();
+    private ContatoDAO cDAO = new ContatoDAO();
     private Contato contato = new Contato();
     private List<Contato> listaContatosManage = null;
-    private String nome;
     
     @PostConstruct
     public void init() {
         if (listaContatosManage == null) {
-            listaContatosManage = pDAO.listarContatoDAO();
+            listaContatosManage = cDAO.listarContatoDAO();
         }
     }
     
     public String cadastrarContatoManage(Contato c){
         listaContatosManage.add(c);
-        pDAO.inserir(c);
-        return "login.xhtml";
+        cDAO.cadastrarContatoDAO(c);
+        return "login_sucesso.xhtml";
     }
     
     public String listarContatoManage(){
@@ -53,12 +52,12 @@ public class ContatoMB {
 //    public ContatoMB() {
 //    }
 
-    public ContatoDAO getpDAO() {
-        return pDAO;
+    public ContatoDAO getcDAO() {
+        return cDAO;
     }
 
-    public void setpDAO(ContatoDAO pDAO) {
-        this.pDAO = pDAO;
+    public void setcDAO(ContatoDAO cDAO) {
+        this.cDAO = cDAO;
     }
 
     public Contato getContato() {
