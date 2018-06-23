@@ -30,7 +30,7 @@ public class ContatoDAO {
     }
     
     public List<Contato> listarContatoDAO(){
-        return null;
+        return listaContatos;
     }
     
     public void removerContatoDAO(Contato contato){

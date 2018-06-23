@@ -28,13 +28,14 @@ public class ContatoMB {
     @PostConstruct
     public void init() {
         if (listaContatosManage == null) {
-            listaContatosManage = listaContatosManage = pDAO.listarContatoDAO();
+            listaContatosManage = pDAO.listarContatoDAO();
         }
     }
     
     public String cadastrarContatoManage(Contato c){
-        listaContatosManage.add(contato);
-        return "/login";
+        listaContatosManage.add(c);
+        pDAO.inserir(c);
+        return "login.xhtml";
     }
     
     public String listarContatoManage(){
