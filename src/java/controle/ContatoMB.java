@@ -34,7 +34,7 @@ public class ContatoMB {
     public String cadastrarContatoManage(Contato c){
         listaContatosManage.add(c);
         cDAO.cadastrarContatoDAO(c);
-        return "login_sucesso.xhtml";
+        return "perfil.xhtml";
     }
     
     public String listarContatoManage(){

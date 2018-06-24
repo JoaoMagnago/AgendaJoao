@@ -5,6 +5,7 @@
  */
 package modelo;
 
+import controle.LoginMB;
 import java.util.Date;
 
 /**
@@ -12,19 +13,27 @@ import java.util.Date;
  * @author alunodev06
  */
 public class Pessoa {
-    private String nome;
+    public String nome;
     private String telefone;
     private String endereco;
     private Date dataNasc;
     private String email;
-    private Integer senha;
+    public Integer senha;
 
     public Pessoa() {
     }
 
-    public Pessoa(String nome, Integer senha) {
-        this.nome = nome;
-        this.senha = senha;
+    public Pessoa(Pessoa p) {
+        this.nome = p.nome;
+        this.telefone = p.telefone;
+        this.endereco = p.endereco;
+        this.dataNasc = p.dataNasc;
+        this.email = p.email;
+        this.senha = p.senha;
+    }
+
+    public Pessoa(LoginMB p) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public String getNome() {

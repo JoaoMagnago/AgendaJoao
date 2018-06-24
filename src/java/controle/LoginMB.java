@@ -22,7 +22,6 @@ import modelo.Pessoa;
 public class LoginMB {
     public String login;
     public Integer senha;
-    public Pessoa pessoa = new Pessoa();
 
     public String getLogin() {
         return login;
@@ -53,13 +52,8 @@ public class LoginMB {
         this.sessaoUsuario = sessaoUsuario;
     }
     
-    public String cadastrarPessoa(Pessoa p){
-        
-        return "login.xhtml";
-    }
-    
     public String logar(){
-        Pessoa p = iDToolsBDUsuario.verificar(login, senha);
+        Pessoa p = iDToolsBDUsuario.verificar(this);
         if (p != null){
             sessaoUsuario.setPessoaLogada(p);
             Date date = new Date();

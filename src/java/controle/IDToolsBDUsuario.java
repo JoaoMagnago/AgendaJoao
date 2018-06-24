@@ -20,13 +20,13 @@ class IDToolsBDUsuario {
 //        pessoasCadastradas.put("Mateus", new Integer(222));
     }
     
-    public void cadastrar(String login, Integer senha){
-        pessoasCadastradas.put(login, senha);
+    public void cadastrar(Pessoa p){
+        pessoasCadastradas.put(p.nome, p.senha);
     }
     
-    public Pessoa verificar(String nome, Integer senha){
-        if (senha.equals(pessoasCadastradas.get(nome))){
-            return new Pessoa(nome, senha);
+    public Pessoa verificar(LoginMB p){
+        if (p.senha.equals(pessoasCadastradas.get(p.login))){
+            return new Pessoa(p);
         }
         return null;
     }

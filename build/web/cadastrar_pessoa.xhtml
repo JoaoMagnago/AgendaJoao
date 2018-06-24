@@ -11,16 +11,24 @@
                 <h1>Cadastro de Usuário</h1> <br/> <h3>
                     <h:panelGrid columns="3">
                         <h:outputLabel value="Nome"/>
-                        <h:inputText id="nome" value="#{loginBean.pessoa.nome}" required="true" requiredMessage="Nome obrigatório"/>
-                        <h:message for="idLog" style="color:red"/>
-
+                        <h:inputText id="nome" value="#{cadastroBean.pessoa.nome}" required="true" requiredMessage="* Nome obrigatório"/>
+                        <h:message for="nome" style="color:red"/>
+                        
+                        <h:outputLabel value="Telefone"/>
+                        <h:inputText id="telefone" value="#{cadastroBean.pessoa.nome}"/>
+                        
+                        <h:outputLabel value="Endereco"/>
+                        <h:inputText id="endereco" value="#{cadastroBean.pessoa.endereco}"/>
+                        
+                        <h:outputLabel value="Data de Nascimento"/>
+                        <h:inputText id="telefone" value="#{cadastroBean.pessoa.dataNasc}"/>
+                        
                         <h:outputLabel value="Senha"/>
-                        <h:inputText id="senha" value="#{loginBean.pessoa.senha}" required="true" requiredMessage="Senha obrigatória"/>
-                        <h:message for="idSen" style="color:red"/>
+                        <h:inputText id="senha" value="#{cadastroBean.pessoa.senha}" required="true" requiredMessage="* Senha obrigatória"/>
+                        <h:message for="senha" style="color:red"/>
                     </h:panelGrid>
                     <h:messages globalOnly="true" showDetail="true" style="color:red"/>
-                    <h:commandButton value="Logar" action="#{loginBean.logar}"/><br/>
-                    <h:commandLink value="Cadastrar" action="cadastrar_pessoa"/>
+                    <h:commandButton value="Cadastrar" action="#{cadastroBean.cadastrarPessoa(p)}"/><br/>
                 </h3>
             </center>
         </h:form>
