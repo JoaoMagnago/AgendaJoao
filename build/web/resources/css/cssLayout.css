@@ -1,17 +1,25 @@
 
 #top {
-    position: relative;
-    background-color: #036fab;
-    color: white;
+    position: absolute;
     padding: 5px;
-    margin: 0px 0px 10px 0px;
+    height: 40px;
+    width: 100%;
+    text-align: center;
+    border-style: solid;
+    border-width: 1px;
+    padding: 0px;
 }
 
 #bottom {
-    position: relative;
-    background-color: #c2dfef;
+    position: absolute;
     padding: 5px;
-    margin: 10px 0px 0px 0px;
+    height: 30px;
+    bottom: 0px;
+    width: 100%;
+    text-align: center;
+    border-style: solid;
+    border-width: 1px;
+    padding: 0px;
 }
 
 #left {
@@ -29,9 +37,13 @@
 }
 
 .center_content {
-    position: relative;
-    background-color: #dddddd;
-    padding: 5px;
+    position: absolute;
+    top: 60px; /* Header Height */
+    bottom: 50px; /* Footer Height */
+    width: 100%;
+    border-style: solid;
+    border-width: 1px;
+    padding: 10px;
 }
 
 .left_content {

@@ -37,13 +37,8 @@ public class ContatoMB {
         return "inicio.xhtml";
     }
     
-<<<<<<< HEAD
     public ArrayList<Contato> listarContatoManage(){
         return cDAO.listaContatos;
-=======
-    public String listarContatoManage(){
-        return "listar.xhtml";
->>>>>>> e70100a1ec272e71416b3efa6eda4dddd14353b0
     }
     
     public String deletarContato(Contato contato){
