@@ -8,32 +8,36 @@
     </h:head>
     <h:body>
         <h:form>
-            <h:outputLabel value="Nome ">
-                <h:inputText value="#{contatoBean.contato.nome}"/>
-            </h:outputLabel> <br/>
-            <h:outputLabel value="Email ">
-                <h:inputText value="#{contatoBean.contato.email}"/>
-            </h:outputLabel> <br/>
-            <h:outputLabel value="Telefone ">
-                <h:inputText value="#{contatoBean.contato.telefone}"/>
-            </h:outputLabel> <br/>
-            <h:outputLabel value="Tipo de telefone " />
-            <h:selectOneRadio value="#{contatoBean.contato.tipoTelefone}">
-                <f:selectItem itemValue="celular" itemLabel="Celular" />
-            </h:selectOneRadio>
-            <h:outputLabel value="Tipo de contato " />
-            <h:selectOneMenu value="#{contatoBean.contato.tipoContato}">
-                <f:selectItem itemLabel="Escolha um item..." noSelectionOption="true"/>
-                <f:selectItem itemValue="amigo" itemLabel="Amigo"/>
-            </h:selectOneMenu> <br/>
-            <h:outputLabel value="Favorito" />
-            <h:selectOneRadio value="#{contatoBean.contato.favorito}">
-                <f:selectItem itemValue="true" itemLabel="Sim" />
-                <f:selectItem itemValue="false" itemLabel="Nao" />
-            </h:selectOneRadio>
-            
-            <h:commandButton value="Cadastrar" action="#{contatoBean.cadastrarContatoManage(contatoBean.contato)}"/><p/>
-            <h:commandButton value="Cancelar" immediate="true" action="/perfil.xhtml"/>
+            <center>
+                <h1>Cadastrar novo contato</h1>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="Nome: ">
+                        <h:inputText value="#{contatoBean.contato.nome}" style="padding-right: 100%"/>
+                    </h:outputLabel> <br/>
+                    <h:outputLabel value="Email: ">
+                        <h:inputText value="#{contatoBean.contato.email}" style="padding-right: 100%"/>
+                    </h:outputLabel> <br/>
+                    <h:outputLabel value="Telefone ">
+                        <h:inputText value="#{contatoBean.contato.telefone}" style="width: 50%"/>
+                    </h:outputLabel> <br/>
+                    <h:outputLabel value="Tipo de telefone " />
+                    <h:selectOneRadio value="#{contatoBean.contato.tipoTelefone}">
+                        <f:selectItem itemValue="celular" itemLabel="Celular" />
+                    </h:selectOneRadio>
+                    <h:outputLabel value="Tipo de contato " />
+                    <h:selectOneMenu value="#{contatoBean.contato.tipoContato}">
+                        <f:selectItem itemLabel="Escolha um item..." noSelectionOption="true"/>
+                        <f:selectItem itemValue="amigo" itemLabel="Amigo"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="Favorito" />
+                    <h:selectOneRadio value="#{contatoBean.contato.favorito}">
+                        <f:selectItem itemValue="true" itemLabel="Sim" />
+                        <f:selectItem itemValue="false" itemLabel="Nao" />
+                    </h:selectOneRadio>
+                </h:panelGrid>
+                <h:commandButton value="Cadastrar" action="#{contatoBean.cadastrarContatoManage(contatoBean.contato)}"/><p/>
+                <h:commandButton value="Cancelar" immediate="true" action="/perfil.xhtml"/>
+            </center> 
         </h:form>
     </h:body>
 </html>

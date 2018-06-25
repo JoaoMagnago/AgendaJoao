@@ -38,15 +38,19 @@ public class ContatoMB {
     }
     
     public String listarContatoManage(){
-        return null;
+        return "listar.xhtml";
     }
     
     public String deletarContato(Contato contato){
-        return null;
+        listaContatosManage.remove(contato);
+        cDAO.removerContatoDAO(contato);
+        return "listar.xhtml";
     }
     
-    public String consultarContatoManage(){
-        return null;
+    public String consultarContatoManage(Contato c){
+        if(listaContatosManage.contains(c))
+            return "resultado.xhtml";
+        return "consultar.xhtml";
     }
 
 //    public ContatoMB() {

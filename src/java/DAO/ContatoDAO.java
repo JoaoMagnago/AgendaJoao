@@ -35,7 +35,8 @@ public class ContatoDAO {
     }
     
     public void removerContatoDAO(Contato contato){
-        
+        listaContatos.remove(contato);
+        ContatoDAO.agendaBD.remove(contato);
     }
     
     public Contato consultarContatoDAO(String nomeBusca){

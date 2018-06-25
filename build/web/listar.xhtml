@@ -19,12 +19,12 @@
                 </h:column>
                 <h:column>
                     <f:facet name="header">
-                        <h:outputLabel value="Acao "/>
+                        <h:outputLabel value="Ação "/>
                     </f:facet>
                     <h:commandLink value="Apagar" action="#{contatoBean.deletarContato(contato)}"/>
                 </h:column>
             </h:dataTable> <br/>
-            <h:commandButton value="Voltar" immediate="true" action="/index.xhtml"/>
+            <h:commandButton value="Voltar" immediate="true" action="/perfil.xhtml?faces-redirect=true"/>
             <hr/>
         </h:form>
     </h:body>
