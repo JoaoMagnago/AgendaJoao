@@ -37,16 +37,25 @@ public class ContatoMB {
         return "inicio.xhtml";
     }
     
+<<<<<<< HEAD
     public ArrayList<Contato> listarContatoManage(){
         return cDAO.listaContatos;
+=======
+    public String listarContatoManage(){
+        return "listar.xhtml";
+>>>>>>> e70100a1ec272e71416b3efa6eda4dddd14353b0
     }
     
     public String deletarContato(Contato contato){
-        return null;
+        listaContatosManage.remove(contato);
+        cDAO.removerContatoDAO(contato);
+        return "listar.xhtml";
     }
     
-    public String consultarContatoManage(){
-        return null;
+    public String consultarContatoManage(Contato c){
+        if(listaContatosManage.contains(c))
+            return "resultado.xhtml";
+        return "consultar.xhtml";
     }
 
 //    public ContatoMB() {
