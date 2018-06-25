@@ -6,23 +6,38 @@
     <navigation-rule>
         <from-view-id>/index.xhtml</from-view-id>
         <navigation-case>
-            <from-outcome>case1</from-outcome>
-            <to-view-id>/cadastrar.xhtml</to-view-id>
+            <from-outcome>signIn</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
         </navigation-case>
         <navigation-case>
-            <from-outcome>case2</from-outcome>
-            <to-view-id>/listar.xhtml</to-view-id>
-        </navigation-case>
-        <navigation-case>
-            <from-outcome>case3</from-outcome>
-            <to-view-id>/consultar.xhtml</to-view-id>
+            <from-outcome>signUp</from-outcome>
+            <to-view-id>/cadastrar_pessoa.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
     <navigation-rule>
-        <from-view-id>/consultar.xhtml</from-view-id>
+        <from-view-id>/login.xhtml</from-view-id>
         <navigation-case>
-            <from-outcome>case1</from-outcome>
-            <to-view-id>/resultado.xhtml</to-view-id>
+            <from-outcome>sucesso</from-outcome>
+            <to-view-id>/perfil.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>fracasso</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>cadastrarLogin</from-outcome>
+            <to-view-id>/cadastrar_pessoa.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/cadastrar_pessoa.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>cadastrou</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>erroCadastro</from-outcome>
+            <to-view-id>/cadastrar_pessoa.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
 </faces-config>
