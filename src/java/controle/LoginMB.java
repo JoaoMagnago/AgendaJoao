@@ -66,8 +66,8 @@ public class LoginMB {
         }
     }
     
-    public String pularFora(){
+    public String logout(){
         sessaoUsuario = null;
-        return "falha_autenticacao";
+        return "login";
     }
 }

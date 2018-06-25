@@ -14,7 +14,7 @@ import modelo.Pessoa;
  *
  * @author joaoa
  */
-@ManagedBean (name = "cadastroBean")
+@ManagedBean (name="cadastroBean")
 @RequestScoped
 public class CadastroMB {
     private PessoaDAO pDAO = new PessoaDAO();

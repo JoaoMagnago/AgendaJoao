@@ -3,18 +3,25 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html">
     <h:head>
-        <title>Facelet Title</title>
+        <title>Perfil</title>
     </h:head>
     <h:body>
-        <div>#{SessaoManageBean.pessoaLogada.nome}</div>
-        <div>#{SessaoManageBean.pessoaLogada.senha}</div>
-        <div>#{SessaoManageBean.dataInicioSessao}</div>
-        <br/>
         <div>
             <h:form>
-                <h:commandLink value="Página 1" action="pagina1"/><br/>
-                <h:commandLink value="Página 2" action="pagina2"/><br/>
-                <h:commandButton value="Sair" action="#{loginBean.pularFora}"/>
+                <center>
+                    <h1>Bem vindo à sua Agenda Virtual, #{SessaoManageBean.pessoaLogada.nome}</h1> <br/>
+                    <h3>
+                        <h:commandLink value="Cadastrar contato" action="/cadastrar.xhtml" />
+                        <br/><br/>
+                        <h:commandLink value="Listar contatos" action="/listar.xhtml" />
+                        <br/><br/>
+                        <h:commandLink value="Atualizar contato" action="/atualizar.xhtml" />
+                        <br/><br/>
+                        <h:commandLink value="Deletar contato" action="/deletar.xhtml" />
+                        <br/><br/>
+                    </h3>
+                    <h:commandButton value="Sair" action="#{loginBean.logout}"/>
+                </center>
             </h:form>
         </div>
     </h:body>
