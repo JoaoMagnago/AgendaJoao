@@ -67,7 +67,8 @@ public class LoginMB {
     }
     
     public String logout(){
-        sessaoUsuario = null;
+        sessaoUsuario.setDataInicioSessao(null);
+        sessaoUsuario.setPessoaLogada(null);
         return "login";
     }
 }

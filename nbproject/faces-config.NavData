@@ -9,15 +9,15 @@
     </Scope>
     <Scope Scope="Project">
         <Node id="login.xhtml" x="150" y="600" zoom="true"/>
-        <Node id="pagina2.xhtml" x="900" y="150" zoom="true"/>
-        <Node id="cadastrar_pessoa.xhtml" x="150" y="450" zoom="true"/>
-        <Node id="perfil.xhtml" x="650" y="300" zoom="true"/>
+        <Node id="modelo.xhtml" x="972" y="380" zoom="true"/>
         <Node id="resultado.xhtml" x="650" y="150" zoom="true"/>
-        <Node id="index.xhtml" x="150" y="150" zoom="true"/>
-        <Node id="listar.xhtml" x="400" y="300" zoom="true"/>
-        <Node id="consultar.xhtml" x="150" y="300" zoom="true"/>
-        <Node id="pagina1.xhtml" x="400" y="450" zoom="true"/>
-        <Node id="cadastrar.xhtml" x="400" y="150" zoom="true"/>
+        <Node id="cadastrar_pessoa.xhtml" x="150" y="450" zoom="true"/>
+        <Node id="listar.xhtml" x="907" y="154" zoom="true"/>
+        <Node id="consultar.xhtml" x="649" y="251" zoom="true"/>
+        <Node id="inicio.xhtml" x="779" y="380" zoom="true"/>
+        <Node id="atualizar.xhtml" x="1160" y="153" zoom="true"/>
+        <Node id="cadastrar.xhtml" x="639" y="80" zoom="true"/>
+        <Node id="deletar.xhtml" x="906" y="88" zoom="true"/>
     </Scope>
     <Scope Scope="All Faces Configurations">
         <Node id="resultado.xhtml" x="650" y="150" zoom="true"/>

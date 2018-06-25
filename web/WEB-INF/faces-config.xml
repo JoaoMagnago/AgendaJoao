@@ -4,21 +4,11 @@
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
               xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
     <navigation-rule>
-        <from-view-id>/index.xhtml</from-view-id>
-        <navigation-case>
-            <from-outcome>signIn</from-outcome>
-            <to-view-id>/login.xhtml</to-view-id>
-        </navigation-case>
-        <navigation-case>
-            <from-outcome>signUp</from-outcome>
-            <to-view-id>/cadastrar_pessoa.xhtml</to-view-id>
-        </navigation-case>
-    </navigation-rule>
-    <navigation-rule>
         <from-view-id>/login.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>sucesso</from-outcome>
-            <to-view-id>/perfil.xhtml</to-view-id>
+            <to-view-id>/inicio.xhtml</to-view-id>
+            <redirect/>
         </navigation-case>
         <navigation-case>
             <from-outcome>fracasso</from-outcome>
@@ -41,29 +31,20 @@
         </navigation-case>
     </navigation-rule>
     <navigation-rule>
-        <from-view-id>/perfil.xhtml</from-view-id>
-        <navigation-case>
-            <from-outcome>cadastrarContato</from-outcome>
-            <to-view-id>/cadastrar.xhtml</to-view-id>
-        </navigation-case>
-        <navigation-case>
-            <from-outcome>listarContatos</from-outcome>
-            <to-view-id>/listar.xhtml</to-view-id>
-        </navigation-case>
-        <navigation-case>
-            <from-outcome>atualizarContato</from-outcome>
-            <to-view-id>/atualizar.xhtml</to-view-id>
-        </navigation-case>
-        <navigation-case>
-            <from-outcome>consultarContato</from-outcome>
-            <to-view-id>/consultar.xhtml</to-view-id>
-        </navigation-case>
-    </navigation-rule>
-    <navigation-rule>
         <from-view-id>/consultar.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>resultado</from-outcome>
             <to-view-id>/resultado.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
+    <navigation-rule>
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-outcome>falha_autenticacao</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <lifecycle>
+        <phase-listener>listeners.AutorizaListener</phase-listener>
+    </lifecycle>
 </faces-config>

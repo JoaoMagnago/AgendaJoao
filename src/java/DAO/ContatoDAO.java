@@ -14,8 +14,7 @@ import modelo.Contato;
  * @author joaoa
  */
 public class ContatoDAO {
-    private static List<Contato> agendaBD = new ArrayList<Contato>();
-    public ArrayList<Contato> listaContatos = new ArrayList<>();
+    public static ArrayList<Contato> listaContatos = new ArrayList<>();
     
     public ArrayList<Contato> getAll(){
         return this.listaContatos;
@@ -23,15 +22,14 @@ public class ContatoDAO {
     
     public void inserir(Contato contato){
         this.listaContatos.add(contato);
-    }    
+    }
     
     public void cadastrarContatoDAO(Contato contato){
         inserir(contato);
-        ContatoDAO.agendaBD.add(contato); //Acesso ao atributo estático
     }
     
     public List<Contato> listarContatoDAO(){
-        return ContatoDAO.agendaBD;
+        return ContatoDAO.listaContatos;
     }
     
     public void removerContatoDAO(Contato contato){
@@ -44,14 +42,4 @@ public class ContatoDAO {
 
     public ContatoDAO() {
     }
-
-    public static List<Contato> getAgendaBD() {
-        return agendaBD;
-    }
-
-    public static void setAgendaBD(List<Contato> agendaBD) {
-        ContatoDAO.agendaBD = agendaBD;
-    }
-    
-    
 }

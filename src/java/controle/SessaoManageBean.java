@@ -18,7 +18,7 @@ import modelo.Pessoa;
 @SessionScoped
 public class SessaoManageBean {
     private Pessoa PessoaLogada;
-    public Date dataInicioSessao;
+    private Date dataInicioSessao;
 
     public Pessoa getPessoaLogada() {
         return PessoaLogada;

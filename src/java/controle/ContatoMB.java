@@ -6,6 +6,7 @@
 package controle;
 
 import DAO.ContatoDAO;
+import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
@@ -32,13 +33,12 @@ public class ContatoMB {
     }
     
     public String cadastrarContatoManage(Contato c){
-        listaContatosManage.add(c);
         cDAO.cadastrarContatoDAO(c);
-        return "perfil.xhtml";
+        return "inicio.xhtml";
     }
     
-    public String listarContatoManage(){
-        return null;
+    public ArrayList<Contato> listarContatoManage(){
+        return cDAO.listaContatos;
     }
     
     public String deletarContato(Contato contato){
