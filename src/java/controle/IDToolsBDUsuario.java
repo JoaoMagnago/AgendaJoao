@@ -5,6 +5,7 @@
  */
 package controle;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import modelo.Pessoa;
 
@@ -13,20 +14,23 @@ import modelo.Pessoa;
  * @author alunodev06
  */
 class IDToolsBDUsuario {
-    public static HashMap<String, Integer> pessoasCadastradas = new HashMap<>();
+    public static ArrayList<Pessoa> pessoasCadastradas = new ArrayList<Pessoa>();
     public IDToolsBDUsuario(){
-//        pessoasCadastradas.put("Isao", new Integer(123));
-//        pessoasCadastradas.put("Joao", new Integer(111));
-//        pessoasCadastradas.put("Mateus", new Integer(222));
+        pessoasCadastradas.add(new Pessoa("joao", "123123123", "rua tal", "joao@joao.com", "123123"));
     }
     
     public void cadastrar(Pessoa p){
-        pessoasCadastradas.put(p.nome, p.senha);
+        pessoasCadastradas.add(p);
     }
     
-    public Pessoa verificar(LoginMB p){
-        if (p.senha.equals(pessoasCadastradas.get(p.login))){
-            return new Pessoa(p);
+    public Pessoa verificar(String login, String senha){
+        Pessoa p = null;
+        for(Pessoa i : pessoasCadastradas){
+            if(i.getEmail() != null && i.getEmail().equals(login))
+                p = i;
+        }
+        if (p != null && senha.equals(p.getSenha())){
+            return p;
         }
         return null;
     }

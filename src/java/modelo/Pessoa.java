@@ -16,9 +16,16 @@ public class Pessoa {
     public String nome;
     private String telefone;
     private String endereco;
-    private Date dataNasc;
     private String email;
-    public Integer senha;
+    public String senha;
+
+    public Pessoa(String nome, String telefone, String endereco, String email, String senha) {
+        this.nome = nome;
+        this.telefone = telefone;
+        this.endereco = endereco;
+        this.email = email;
+        this.senha = senha;
+    }
 
     public Pessoa() {
     }
@@ -27,13 +34,8 @@ public class Pessoa {
         this.nome = p.nome;
         this.telefone = p.telefone;
         this.endereco = p.endereco;
-        this.dataNasc = p.dataNasc;
         this.email = p.email;
         this.senha = p.senha;
-    }
-
-    public Pessoa(LoginMB p) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public String getNome() {
@@ -60,14 +62,6 @@ public class Pessoa {
         this.endereco = endereco;
     }
 
-    public Date getDataNasc() {
-        return dataNasc;
-    }
-
-    public void setDataNasc(Date dataNasc) {
-        this.dataNasc = dataNasc;
-    }
-
     public String getEmail() {
         return email;
     }
@@ -76,11 +70,11 @@ public class Pessoa {
         this.email = email;
     }
 
-    public Integer getSenha() {
+    public String getSenha() {
         return senha;
     }
 
-    public void setSenha(Integer senha) {
+    public void setSenha(String senha) {
         this.senha = senha;
     }
 

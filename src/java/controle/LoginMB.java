@@ -21,7 +21,7 @@ import modelo.Pessoa;
 @RequestScoped
 public class LoginMB {
     public String login;
-    public Integer senha;
+    public String senha;
 
     public String getLogin() {
         return login;
@@ -31,11 +31,11 @@ public class LoginMB {
         this.login = login;
     }
 
-    public Integer getSenha() {
+    public String getSenha() {
         return senha;
     }
 
-    public void setSenha(Integer senha) {
+    public void setSenha(String senha) {
         this.senha = senha;
     }
     
@@ -53,7 +53,7 @@ public class LoginMB {
     }
     
     public String logar(){
-        Pessoa p = iDToolsBDUsuario.verificar(this);
+        Pessoa p = iDToolsBDUsuario.verificar(this.login, this.senha);
         if (p != null){
             sessaoUsuario.setPessoaLogada(p);
             Date date = new Date();
