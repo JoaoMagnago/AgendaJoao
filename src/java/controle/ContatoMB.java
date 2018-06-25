@@ -17,7 +17,7 @@ import modelo.Contato;
  * @author joaoa
  */
 
-@ManagedBean(name = "contatoBean")
+@ManagedBean(name="contatoBean")
 @RequestScoped
 public class ContatoMB {
     private ContatoDAO cDAO = new ContatoDAO();

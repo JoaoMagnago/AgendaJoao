@@ -40,4 +40,30 @@
             <to-view-id>/cadastrar_pessoa.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/perfil.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>cadastrarContato</from-outcome>
+            <to-view-id>/cadastrar.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>listarContatos</from-outcome>
+            <to-view-id>/listar.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>atualizarContato</from-outcome>
+            <to-view-id>/atualizar.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>consultarContato</from-outcome>
+            <to-view-id>/consultar.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/consultar.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>resultado</from-outcome>
+            <to-view-id>/resultado.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
 </faces-config>
