@@ -26,4 +26,30 @@ public class CadastroMB {
         pDAO.cadastrarPessoa(p);
         return "login.xhtml";
     }
+
+    public PessoaDAO getpDAO() {
+        return pDAO;
+    }
+
+    public void setpDAO(PessoaDAO pDAO) {
+        this.pDAO = pDAO;
+    }
+
+    public Pessoa getPessoa() {
+        return pessoa;
+    }
+
+    public void setPessoa(Pessoa pessoa) {
+        this.pessoa = pessoa;
+    }
+
+    public IDToolsBDUsuario getDb() {
+        return db;
+    }
+
+    public void setDb(IDToolsBDUsuario db) {
+        this.db = db;
+    }
+    
+    
 }
