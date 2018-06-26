@@ -8,10 +8,10 @@
         <Node id="consultar.xhtml" x="150" y="300" zoom="true"/>
     </Scope>
     <Scope Scope="Project">
-        <Node id="modelo.xhtml" x="972" y="380" zoom="true"/>
         <Node id="login.xhtml" x="150" y="600" zoom="true"/>
-        <Node id="cadastrar_pessoa.xhtml" x="150" y="450" zoom="true"/>
+        <Node id="modelo.xhtml" x="972" y="380" zoom="true"/>
         <Node id="resultado.xhtml" x="650" y="150" zoom="true"/>
+        <Node id="cadastrar_pessoa.xhtml" x="150" y="450" zoom="true"/>
         <Node id="listar.xhtml" x="907" y="154" zoom="true"/>
         <Node id="consultar.xhtml" x="649" y="251" zoom="true"/>
         <Node id="inicio.xhtml" x="779" y="380" zoom="true"/>

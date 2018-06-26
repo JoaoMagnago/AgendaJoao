@@ -2,7 +2,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
 
     <h:head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -14,7 +15,10 @@
     <h:body>
 
         <div id="top">
-            <ui:insert name="top"><h1>Bem vindo à sua Agenda Virtual, #{SessaoManageBean.pessoaLogada.nome}</h1></ui:insert>
+            <ui:insert name="top">
+                <h1>#{msg['greeting']}, #{SessaoManageBean.pessoaLogada.nome}</h1>
+                
+            </ui:insert>
         </div>
         <div id="content" class="center_content">
             <ui:insert name="content">
@@ -23,7 +27,20 @@
         </div>
 
         <div id="bottom">
-            <ui:insert name="bottom">Programação Avançada Para WEB</ui:insert>
+            <ui:insert name="bottom">
+                <div style="width: 85%; float: left">
+                    #{msg['footer']}
+                </div>
+                <h:form style="width: 15%; float: left">
+                    <h:panelGrid columns = "2"> 
+                       Language : 
+                       <h:selectOneMenu value = "#{SessaoManageBean.locale}" onchange = "submit()"
+                          valueChangeListener = "#{SessaoManageBean.localeChanged}">
+                          <f:selectItems value = "#{SessaoManageBean.countries}" /> 
+                       </h:selectOneMenu> 
+                    </h:panelGrid> 
+                 </h:form>
+            </ui:insert>
         </div>
 
     </h:body>

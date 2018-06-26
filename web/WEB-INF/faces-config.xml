@@ -47,4 +47,15 @@
     <lifecycle>
         <phase-listener>listeners.AutorizaListener</phase-listener>
     </lifecycle>
+    <application>
+        <locale-config>
+            <default-locale>pt</default-locale>
+            <supported-locale>en</supported-locale>
+            <supported-locale>ja</supported-locale>
+        </locale-config>
+        <resource-bundle>
+            <base-name>properties.messages</base-name>
+            <var>msg</var>
+        </resource-bundle>
+    </application>
 </faces-config>

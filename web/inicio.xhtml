@@ -2,22 +2,19 @@
 <!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 xmlns:h="http://xmlns.jcp.org/jsf/html"
-                template="./modelo.xhtml">
+                template="./modelo.xhtml"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
 
     <ui:define name="content">
         <h:form>
             <center>
                 <h3>
-                    <h:commandLink value="Cadastrar contato" action="/cadastrar.xhtml" />
+                    <h:commandLink value="#{msg['register']}" action="/cadastrar.xhtml" />
                     <br/><br/>
-                    <h:commandLink value="Listar contatos" action="/listar.xhtml" />
-                    <br/><br/>
-                    <h:commandLink value="Atualizar contato" action="/atualizar.xhtml" />
-                    <br/><br/>
-                    <h:commandLink value="Deletar contato" action="/deletar.xhtml" />
+                    <h:commandLink value="#{msg['listar']}" action="/listar.xhtml" />
                     <br/><br/>
                 </h3>
-                <h:commandButton value="Sair" action="#{loginBean.logout}"/>
+                <h:commandButton value="#{msg['exit']}" action="#{loginBean.logout}"/>
             </center>
         </h:form>
     </ui:define>

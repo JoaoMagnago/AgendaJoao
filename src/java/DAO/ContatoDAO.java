@@ -7,6 +7,7 @@ package DAO;
 
 import java.util.ArrayList;
 import java.util.List;
+import modelo.Cidade;
 import modelo.Contato;
 
 /**
@@ -24,6 +25,14 @@ public class ContatoDAO {
         this.listaContatos.add(contato);
     }
     
+    public void atualizar(Contato contato){
+        for (Contato c : listaContatos){
+            if (c.getEmail().equals(contato.getEmail())){
+                listaContatos.set(listaContatos.indexOf(c), contato);
+            }
+        }
+    }
+    
     public void cadastrarContatoDAO(Contato contato){
         inserir(contato);
     }
@@ -36,7 +45,11 @@ public class ContatoDAO {
         listaContatos.remove(contato);
     }
     
-    public Contato consultarContatoDAO(String nomeBusca){
+    public Contato consultarContatoDAO(String email){
+        for(Contato i : listaContatos){
+            if (i.getEmail().equals(email))
+                return i;
+        }
         return null;
     }
 

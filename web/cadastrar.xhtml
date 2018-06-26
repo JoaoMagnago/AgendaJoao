@@ -11,10 +11,10 @@
                 <h1>Cadastrar novo contato</h1>
                 <h:panelGrid columns="2">
                     <h:outputLabel value="Nome: ">
-                        <h:inputText value="#{contatoBean.contato.nome}" style="padding-right: 100%"/>
+                        <h:inputText value="#{contatoBean.contato.nome}"/>
                     </h:outputLabel> <br/>
                     <h:outputLabel value="Email: ">
-                        <h:inputText value="#{contatoBean.contato.email}" style="padding-right: 100%"/>
+                        <h:inputText value="#{contatoBean.contato.email}"/>
                     </h:outputLabel> <br/>
                     <h:outputLabel value="Telefone ">
                         <h:inputText value="#{contatoBean.contato.telefone}" style="width: 50%"/>
@@ -22,18 +22,30 @@
                     <h:outputLabel value="Tipo de telefone " />
                     <h:selectOneRadio value="#{contatoBean.contato.tipoTelefone}">
                         <f:selectItem itemValue="celular" itemLabel="Celular" />
+                        <f:selectItem itemValue="residencial" itemLabel="Residencial" />
                     </h:selectOneRadio>
                     <h:outputLabel value="Tipo de contato " />
                     <h:selectOneMenu value="#{contatoBean.contato.tipoContato}">
                         <f:selectItem itemLabel="Escolha um item..." noSelectionOption="true"/>
                         <f:selectItem itemValue="amigo" itemLabel="Amigo"/>
+                        <f:selectItem itemValue="familia" itemLabel="Família"/>
                     </h:selectOneMenu>
                     <h:outputLabel value="Favorito" />
                     <h:selectOneRadio value="#{contatoBean.contato.favorito}">
                         <f:selectItem itemValue="true" itemLabel="Sim" />
                         <f:selectItem itemValue="false" itemLabel="Nao" />
                     </h:selectOneRadio>
-                </h:panelGrid>
+                    <h:outputLabel value="Cidade" />
+                    <h:selectOneMenu value="#{contatoBean.idCidade}">
+                        <f:selectItem itemLabel="Escolha um item..." noSelectionOption="true"/>
+                        <f:selectItems value="#{contatoBean.cidades}" var="cidade" itemLabel="#{cidade.nome}" itemValue="#{cidade.id}"/>
+                        <f:ajax render="bairros"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="Bairro" />
+                    <h:selectOneMenu id="bairros" value="#{contatoBean.idBairro}">
+                        <f:selectItems value="#{contatoBean.cidade.bairros}" var="bairro" itemLabel="#{bairro.nome}" itemValue="#{bairro.id}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid><p/>
                 <h:commandButton value="Cadastrar" action="#{contatoBean.cadastrarContatoManage(contatoBean.contato)}"/><p/>
                 <h:commandButton value="Cancelar" immediate="true" action="/inicio.xhtml"/>
             </center> 

@@ -18,9 +18,36 @@
                 </h:column>
                 <h:column>
                     <f:facet name="header">
+                        <h:outputLabel value="Email "/>
+                    </f:facet>
+                    <h:outputText value="#{objeto.email}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputLabel value="Telefone "/>
+                    </f:facet>
+                    <h:outputText value="#{objeto.telefone}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputLabel value="Tipo "/>
+                    </f:facet>
+                    <h:outputText value="#{objeto.tipoContato}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputLabel value="Favorito "/>
+                    </f:facet>
+                    <h:outputText value="#{objeto.favorito}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
                         <h:outputLabel value="Ação "/>
                     </f:facet>
-                    <h:commandLink value="Apagar" action="#{contatoBean.deletarContato(contato)}"/>
+                    <h:commandLink value="Apagar" action="#{contatoBean.deletarContato(objeto)}"/>
+                    <h:link value="Atualizar" outcome="atualizar.xhtml" includeViewParams="true">
+                        <f:param name="contatoE" value="#{objeto.email}"/>
+                    </h:link>
                 </h:column>
             </h:dataTable> <br/>
             <h:commandButton value="Voltar" immediate="true" action="/inicio.xhtml?faces-redirect=true"/>
